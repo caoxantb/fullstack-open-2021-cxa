@@ -1,0 +1,12 @@
+title Exercise 0.6 - Xuan-An Cao
+
+browser->server: HTTP POST https://studies.cs.helsinki.fi/exampleapp/spa/new_note_spa
+
+note over server:
+server registers an event handler to prevent the default handling 
+of form submission and creates and adds the new note into the notes list, 
+rerenders the note list on the page and sends the new note to the server
+end note
+
+server-->browser: status code 201 CREATED
+
