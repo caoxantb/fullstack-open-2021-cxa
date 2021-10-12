@@ -1,7 +1,7 @@
-FULL STACK OPEN 2021
+# FULL STACK OPEN 2021
 
-Author: Xuan-An Cao
+**Author**: Xuan-An Cao
 
-University: Vaasa University of Applied Sciences
+**University**: Vaasa University of Applied Sciences
 
-Last edited: 12.10.2021
+**Last edited**: 12.10.2021
