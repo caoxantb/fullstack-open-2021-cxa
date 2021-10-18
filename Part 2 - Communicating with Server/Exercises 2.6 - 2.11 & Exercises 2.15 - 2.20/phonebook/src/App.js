@@ -1,25 +1,27 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import axios from "axios";
 
 import Filter from "./components/Filter";
 import PersonsForm from "./components/PersonsForm";
 import Persons from "./components/Persons";
 
 const App = () => {
-  const [persons, setPersons] = useState([
-    { name: "Arto Hellas", number: "0904918606" },
-    { name: "Ada Lovelace", number: "39445323523" },
-    { name: "Dan Abramov", number: "1243234345" },
-    { name: "Mary Poppendieck", number: "39236423122" },
-  ]);
+  const [persons, setPersons] = useState([]);
   const [newName, setNewName] = useState("");
   const [newNumber, setNewNumber] = useState("");
   const [newFilter, setNewFilter] = useState("");
+
+  useEffect(() => {
+    axios.get("http://localhost:3001/persons").then((res) => {
+      setPersons(res.data);
+    });
+  }, []);
 
   const handleFormSubmission = (event) => {
     event.preventDefault();
     if (persons.some((person) => person.name === newName))
       window.alert(`${newName} existed`);
-    else if (isNaN(newNumber))
+    else if (isNaN(newNumber.replace(/-/g, "")))
       window.alert(`${newNumber} is not a valid telephone number`);
     else setPersons([...persons, { name: newName, number: newNumber }]);
   };
