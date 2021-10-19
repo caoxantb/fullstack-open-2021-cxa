@@ -4,4 +4,4 @@
 
 **University**: Vaasa University of Applied Sciences
 
-**Last edited**: 15.10.2021
+**Last edited**: 19.10.2021
