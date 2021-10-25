@@ -1,5 +1,5 @@
 import axios from "axios";
-const API_PERSONS = "http://localhost:3001/api/persons";
+const API_PERSONS = "/api/persons";
 
 const getAll = () => {
   return axios.get(API_PERSONS);
