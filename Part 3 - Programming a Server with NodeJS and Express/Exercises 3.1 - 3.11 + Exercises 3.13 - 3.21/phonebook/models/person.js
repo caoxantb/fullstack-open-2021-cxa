@@ -1,5 +1,7 @@
 const mongoose = require("mongoose");
 
+const uniqueValidator = require("mongoose-unique-validator");
+
 const URL = process.env.MONGODB_URI;
 
 mongoose
@@ -12,9 +14,26 @@ mongoose
   });
 
 const personSchema = new mongoose.Schema({
-  name: String,
-  number: String,
+  name: {
+    type: String,
+    required: true,
+    unique: true,
+    minLength: 3,
+  },
+  number: {
+    type: String,
+    required: true,
+    minLength: 8,
+    validate: {
+      validator: (num) => {
+        return !isNaN(num.replace(/-/g, ""));
+      },
+      message: "Phone number invalid",
+    },
+  },
 });
+
+personSchema.plugin(uniqueValidator);
 
 personSchema.set("toJSON", {
   transform: (document, returnedObject) => {
