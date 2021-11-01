@@ -1,0 +1,19 @@
+{
+  "name": "full-stack-open-2021",
+  "version": "1.0.0",
+  "description": "**Author**: Xuan-An Cao",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/caoxantb/fullstack-open-2021-cxa.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/caoxantb/fullstack-open-2021-cxa/issues"
+  },
+  "homepage": "https://github.com/caoxantb/fullstack-open-2021-cxa#readme"
+}
