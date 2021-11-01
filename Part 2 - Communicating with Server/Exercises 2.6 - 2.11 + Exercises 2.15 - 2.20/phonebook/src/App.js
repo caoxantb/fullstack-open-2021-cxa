@@ -49,19 +49,25 @@ const App = () => {
           setNewNumber("");
         });
       }
-    } else if (isNaN(newNumber.replace(/-/g, "")) || newNumber === "") {
-      window.alert(`${newNumber} is not a valid telephone number`);
     } else
-      personsService.create(personObject).then((res) => {
-        setPersons([...persons, res.data]);
-        setMessage({
-          status: "resolved",
-          message: `${res.data.name} added`,
+      personsService
+        .create(personObject)
+        .then((res) => {
+          setPersons([...persons, res.data]);
+          setMessage({
+            status: "resolved",
+            message: `${res.data.name} added`,
+          });
+          setMessageTimeout();
+          setNewName("");
+          setNewNumber("");
+        })
+        .catch((error) => {
+          setMessage({
+            status: "rejected",
+            message: error.response.data.error,
+          });
         });
-        setMessageTimeout();
-        setNewName("");
-        setNewNumber("");
-      });
   };
 
   const handleDelete = (id) => {
