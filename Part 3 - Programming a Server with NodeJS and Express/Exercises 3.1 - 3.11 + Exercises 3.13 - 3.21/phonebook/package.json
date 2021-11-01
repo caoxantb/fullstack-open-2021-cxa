@@ -8,7 +8,7 @@
         "start": "node index.js",
         "dev": "nodemon index.js",
         "test": "echo \"Error: no test specified\" && exit 1",
-        "deploy": "git subtree push --prefix './Full Stack Open 2021/Part 3 - Programming a Server with NodeJS and Express/Exercises 3.1 - 3.11 + Exercises 3.13 - 3.21/phonebook' heroku HEAD:main",
+        "deploy": "git subtree push --prefix './Part 3 - Programming a Server with NodeJS and Express/Exercises 3.1 - 3.11 + Exercises 3.13 - 3.21/phonebook' heroku HEAD:main",
         "deploy:full": "npm run build:ui && cd '../../../' && git add . && git commit -m uibuild && npm run deploy",
         "logs:prod": "heroku logs --tail"
     },
